@@ -55,7 +55,7 @@ git clone https://github.com/foxlau/react-router-v7-remix-auth.git
 Install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
@@ -71,7 +71,7 @@ Update the environment variables in the .dev.vars file according to your needs. 
 Run an initial database migration:
 
 ```bash
-npm run db:apply
+pnpm run db:apply
 ```
 
 If you modify the Drizzle ORM schema, please run `npm run db:generate` first. If you need to delete the generated SQL migrations, execute `npm run db:drop` and select the SQL migration you wish to remove.
@@ -79,7 +79,7 @@ If you modify the Drizzle ORM schema, please run `npm run db:generate` first. If
 Start the development server with HMR:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
@@ -89,7 +89,7 @@ Your application will be available at `http://localhost:5173`.
 Create a production build:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ## Deployment
@@ -104,20 +104,20 @@ npx wrangler kv namespace create APP_KV
 To deploy directly to production:
 
 ```sh
-npm run db:apply-prod
-npm run deploy
+pnpm run db:apply-prod
+pnpm run deploy
 ```
 
 To deploy a preview URL:
 
 ```sh
-npm run deploy:version
+pnpm run deploy:version
 ```
 
 You can then promote a version to production after verification or roll it out progressively.
 
 ```sh
-npm run deploy:promote
+pnpm run deploy:promote
 ```
 
 ## Questions
