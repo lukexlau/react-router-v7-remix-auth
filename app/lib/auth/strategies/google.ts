@@ -5,7 +5,6 @@
  * @see https://developers.google.com/identity/protocols/oauth2/scopes
  */
 
-import type { OAuth2Tokens } from "arctic";
 import { OAuth2Strategy } from "remix-auth-oauth2";
 
 export type GoogleScope = string;
@@ -113,7 +112,9 @@ export class GoogleStrategy<User> extends OAuth2Strategy<User> {
 		return newParams;
 	}
 
-	static async userProfile(tokens: OAuth2Tokens): Promise<GoogleProfile> {
+	static async userProfile(
+		tokens: OAuth2Strategy.VerifyOptions["tokens"],
+	): Promise<GoogleProfile> {
 		const response = await fetch(
 			"https://www.googleapis.com/oauth2/v3/userinfo",
 			{

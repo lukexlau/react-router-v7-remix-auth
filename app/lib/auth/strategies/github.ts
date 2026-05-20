@@ -4,7 +4,6 @@
  * @see https://docs.github.com/en/rest/users/users
  */
 
-import type { OAuth2Tokens } from "arctic";
 import { OAuth2Strategy } from "remix-auth-oauth2";
 
 export type GitHubProfile = {
@@ -57,7 +56,9 @@ export class GitHubStrategy<User> extends OAuth2Strategy<User> {
 		);
 	}
 
-	static async userProfile(tokens: OAuth2Tokens): Promise<GitHubProfile> {
+	static async userProfile(
+		tokens: OAuth2Strategy.VerifyOptions["tokens"],
+	): Promise<GitHubProfile> {
 		const headers = {
 			Authorization: `Bearer ${tokens.accessToken()}`,
 			Accept: "application/vnd.github.v3+json",
