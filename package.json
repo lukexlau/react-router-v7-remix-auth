@@ -65,7 +65,7 @@
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"drizzle-kit": "~0.31.10",
-		"lefthook": "^2.1.6",
+		"lefthook": "^2.1.8",
 		"tailwindcss": "^4.3.0",
 		"typescript": "^6.0.3",
 		"vite": "8.0.13",
